@@ -94,7 +94,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
       # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
       - name: Update dependency graph
-        uses: advanced-security/maven-dependency-submission-action@v5
+        uses: advanced-security/maven-dependency-submission-action@v6
         if: github.event_name != 'pull_request'
       - name: Create CBOM
         uses: cbomkit/cbomkit-action@v2.2.0
