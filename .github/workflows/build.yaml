@@ -64,8 +64,8 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.ORG }}/${{ env.IMAGE_NAME }}
           tags: |
             type=edge,branch=main
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern=v{{version}}
+            type=semver,pattern=v{{major}}.{{minor}}
             type=sha,format=long
       - name: Log in to the Container registry
         if: github.event_name != 'pull_request'
